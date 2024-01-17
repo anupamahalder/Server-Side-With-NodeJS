@@ -1,3 +1,9 @@
+## Steps we followed:
+    1. Create a post api on the server side
+    2. Client side send data via post
+    3. Set fetch method inside the fetch options (second parameter) in client side and options will have headers: 'content-type':'application/json'. Do not forget to send data by stringify data in the body.
+    4. To get data in server side we need to use express.json() middleware.
+
 ## nodemon
 nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 

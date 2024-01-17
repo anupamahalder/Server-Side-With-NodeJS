@@ -5,6 +5,7 @@ const port = process.env.PORT || 5050;
 
 // use cors as middleware 
 app.use(cors());
+app.use(express.json());
 // creating hard coded user data 
 const users = [
     {id:1, name:"anupama", email:"xyz@gmail.com"},
@@ -22,6 +23,15 @@ app.get('/',(req,res)=>{
 // create a get api to get users data 
 app.get('/users',(req,res)=>{
     res.send(users);
+})
+// create post api 
+app.post('/users',(req,res)=>{
+    console.log(req.body);
+    const newUser = req.body;
+    newUser.id = users.length + 1;
+    users.push(newUser);
+    // send data to client side as well 
+    res.send(newUser);
 })
 
 // To make this server runs we have to use listen with an optional callback function
