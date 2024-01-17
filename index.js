@@ -1,7 +1,10 @@
 const express  = require('express');
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT || 5050;
 
+// use cors as middleware 
+app.use(cors());
 // creating hard coded user data 
 const users = [
     {id:1, name:"anupama", email:"xyz@gmail.com"},
